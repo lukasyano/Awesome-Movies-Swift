@@ -1,17 +1,17 @@
-//
-//  Awesome_MoviesApp.swift
-//  Awesome Movies
-//
-//  Created by Lukas Toliusis on 08/05/2024.
-//
-
 import SwiftUI
-
 @main
 struct Awesome_MoviesApp: App {
+    private let moviesDao: MoviesDaoProtocol = MoviesDao()
+    private let api: ApiServiceProtocol = ApiService()
+    private let trendingMoviesRepository: TrendingMoviesRepositoryProtocol
+
+    init() {
+        self.trendingMoviesRepository = TrendingMoviesRepository(api: api, dao: moviesDao)
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreen(trendingMoviesRepository: trendingMoviesRepository)
         }
     }
 }

@@ -1,13 +1,8 @@
-//
-//  ContentView.swift
-//  Awesome Movies
-//
-//  Created by Lukas Toliusis on 08/05/2024.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct HomeScreenView: View {
+    @ObservedObject var viewModel: HomeViewModel
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +15,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomeScreenView(viewModel: HomeViewModel(trendingMoviesRepository: TrendingMoviesRepository(api: ApiService(), dao: MoviesDao())))
 }
