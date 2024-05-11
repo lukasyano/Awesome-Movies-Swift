@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    @ObservedObject var viewModel: HomeViewModel
+    @StateObject var viewModel: HomeViewModel
 
     var body: some View {
         VStack {
@@ -12,8 +12,4 @@ struct HomeScreenView: View {
         }
         .padding()
     }
-}
-
-#Preview {
-    HomeScreenView(viewModel: HomeViewModel(trendingMoviesRepository: TrendingMoviesRepository(api: ApiService(), dao: MoviesDao())))
 }
