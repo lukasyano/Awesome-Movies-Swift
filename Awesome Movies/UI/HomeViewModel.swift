@@ -3,23 +3,31 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     private let trendingMoviesRepository: TrendingMoviesRepositoryProtocol
+
     private var cancellables = Set<AnyCancellable>()
-    
-    @Published var data: [String] = []
+
+    @Published var data = [MovieEntity]()
     @Published var uiError: String = ""
 
     init(trendingMoviesRepository: TrendingMoviesRepositoryProtocol) {
         self.trendingMoviesRepository = trendingMoviesRepository
         Log.debug("HomeViewModel Init")
-        trendingMoviesRepository.getTrendingMovies(pageNr: 1, filterType: .unfiltered)
+
+        getTrendingMovies(sortingType: .popularity)
+    }
+
+    private func getTrendingMovies(pageNr: Int = 1, sortingType: SortingType = .popularity) {
+        trendingMoviesRepository.getTrendingMovies(pageNr: 1, sortingType: sortingType)
             .receive(on: DispatchQueue.main)
-            .sink { completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished: break
                 case let .failure(error):
-                    self.uiError = error.localizedDescription
+                    self?.uiError = error.localizedDescription
                 }
-            } receiveValue: { print($0) }
+            } receiveValue: { [weak self] movieEntities in
+                self?.data = movieEntities
+            }
             .store(in: &cancellables)
     }
 }

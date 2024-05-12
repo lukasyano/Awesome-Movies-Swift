@@ -1,6 +1,6 @@
 import SwiftUI
 @main
-struct Awesome_MoviesApp: App {
+struct AwesomeMoviesApp: App {
     var body: some Scene {
         WindowGroup {
             MainScreen()

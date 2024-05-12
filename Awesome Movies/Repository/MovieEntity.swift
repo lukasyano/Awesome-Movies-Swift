@@ -1,6 +1,6 @@
 import Foundation
 
-struct MovieEntity {
+struct MovieEntity: Identifiable {
     let id: UUID
     let title: String
     let popularity: Double
