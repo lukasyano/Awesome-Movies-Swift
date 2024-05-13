@@ -3,17 +3,17 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     private let trendingMoviesRepository: TrendingMoviesRepositoryProtocol
-
     private var cancellables = Set<AnyCancellable>()
 
     @Published var data = [MovieEntity]()
     @Published var uiError: String = ""
+    @Published var selectedSortingType : SortingType = .default
 
     init(trendingMoviesRepository: TrendingMoviesRepositoryProtocol) {
         self.trendingMoviesRepository = trendingMoviesRepository
         Log.debug("HomeViewModel Init")
 
-        getTrendingMovies(sortingType: .popularity)
+        getTrendingMovies(sortingType: .default)
     }
 
     private func getTrendingMovies(pageNr: Int = 1, sortingType: SortingType = .popularity) {
@@ -29,5 +29,9 @@ class HomeViewModel: ObservableObject {
                 self?.data = movieEntities
             }
             .store(in: &cancellables)
+    }
+    
+    func getSortedMovies(sortingType: SortingType){
+        getTrendingMovies(sortingType: sortingType)
     }
 }

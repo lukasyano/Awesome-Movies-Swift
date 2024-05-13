@@ -1,3 +1,6 @@
-enum SortingType {
-    case unfiltered, popularity, votes, date
+enum SortingType: String {
+    case `default` = "Unfiltered"
+    case popularity = "Popularity"
+    case votes = "Votes"
+    case date = "Date"
 }

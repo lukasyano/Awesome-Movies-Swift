@@ -20,6 +20,11 @@
 		12B8BB472BEFF758002A78A6 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8BB462BEFF758002A78A6 /* MovieEntity.swift */; };
 		12B8BB4B2BEFFAE8002A78A6 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8BB4A2BEFFAE8002A78A6 /* Mapper.swift */; };
 		12FCA0002BF0A51700B49792 /* SortingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC9FFF2BF0A51700B49792 /* SortingType.swift */; };
+		12FCA0032BF12F0F00B49792 /* ImageRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FCA0022BF12F0F00B49792 /* ImageRetriever.swift */; };
+		12FCA0052BF12F5700B49792 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FCA0042BF12F5700B49792 /* ImageCache.swift */; };
+		12FCA0072BF12F7900B49792 /* CachedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FCA0062BF12F7900B49792 /* CachedImageManager.swift */; };
+		12FCA0092BF12FC700B49792 /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FCA0082BF12FC700B49792 /* CachedImage.swift */; };
+		12FCA00B2BF2290500B49792 /* MovieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FCA00A2BF2290500B49792 /* MovieCard.swift */; };
 		12FDA07E2BEB4B86009FE2E9 /* AwesomeMoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA07D2BEB4B86009FE2E9 /* AwesomeMoviesApp.swift */; };
 		12FDA0802BEB4B86009FE2E9 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA07F2BEB4B86009FE2E9 /* HomeScreenView.swift */; };
 		12FDA0822BEB4B87009FE2E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12FDA0812BEB4B87009FE2E9 /* Assets.xcassets */; };
@@ -44,6 +49,11 @@
 		12B8BB462BEFF758002A78A6 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		12B8BB4A2BEFFAE8002A78A6 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		12FC9FFF2BF0A51700B49792 /* SortingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingType.swift; sourceTree = "<group>"; };
+		12FCA0022BF12F0F00B49792 /* ImageRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRetriever.swift; sourceTree = "<group>"; };
+		12FCA0042BF12F5700B49792 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		12FCA0062BF12F7900B49792 /* CachedImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageManager.swift; sourceTree = "<group>"; };
+		12FCA0082BF12FC700B49792 /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
+		12FCA00A2BF2290500B49792 /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
 		12FDA07A2BEB4B86009FE2E9 /* Awesome Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FDA07D2BEB4B86009FE2E9 /* AwesomeMoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeMoviesApp.swift; sourceTree = "<group>"; };
 		12FDA07F2BEB4B86009FE2E9 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 		12B8BB3B2BEF429C002A78A6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				12FCA0012BF12E8E00B49792 /* ImageCaching */,
 				12B8BB3C2BEF42B0002A78A6 /* Log.swift */,
 			);
 			path = Utilities;
@@ -136,6 +147,17 @@
 				12FC9FFF2BF0A51700B49792 /* SortingType.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		12FCA0012BF12E8E00B49792 /* ImageCaching */ = {
+			isa = PBXGroup;
+			children = (
+				12FCA0022BF12F0F00B49792 /* ImageRetriever.swift */,
+				12FCA0042BF12F5700B49792 /* ImageCache.swift */,
+				12FCA0062BF12F7900B49792 /* CachedImageManager.swift */,
+				12FCA0082BF12FC700B49792 /* CachedImage.swift */,
+			);
+			name = ImageCaching;
 			sourceTree = "<group>";
 		};
 		12FDA0712BEB4B86009FE2E9 = {
@@ -183,6 +205,7 @@
 				12FDA07F2BEB4B86009FE2E9 /* HomeScreenView.swift */,
 				12FDA08C2BEB4DC4009FE2E9 /* HomeViewModel.swift */,
 				12FDA08E2BEB579A009FE2E9 /* MainScreen.swift */,
+				12FCA00A2BF2290500B49792 /* MovieCard.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -280,10 +303,15 @@
 				12FCA0002BF0A51700B49792 /* SortingType.swift in Sources */,
 				12B8BB472BEFF758002A78A6 /* MovieEntity.swift in Sources */,
 				12B8BB382BEF3C10002A78A6 /* DependencyContainer.swift in Sources */,
+				12FCA0052BF12F5700B49792 /* ImageCache.swift in Sources */,
+				12FCA0072BF12F7900B49792 /* CachedImageManager.swift in Sources */,
 				121927012BEE0FC6005E3BA9 /* MoviesDaoProtocol.swift in Sources */,
 				12B8BB332BEF3BC7002A78A6 /* ApiService.swift in Sources */,
+				12FCA0092BF12FC700B49792 /* CachedImage.swift in Sources */,
+				12FCA0032BF12F0F00B49792 /* ImageRetriever.swift in Sources */,
 				12B8BB442BEFF64D002A78A6 /* MovieResult.swift in Sources */,
 				12FDA08D2BEB4DC4009FE2E9 /* HomeViewModel.swift in Sources */,
+				12FCA00B2BF2290500B49792 /* MovieCard.swift in Sources */,
 				12B8BB3F2BEF467D002A78A6 /* Constants.swift in Sources */,
 				12FDA0922BEB592F009FE2E9 /* TrendingMoviesRepository.swift in Sources */,
 				12FDA07E2BEB4B86009FE2E9 /* AwesomeMoviesApp.swift in Sources */,
